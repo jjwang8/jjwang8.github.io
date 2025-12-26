@@ -21,10 +21,6 @@ body {
 
 /* Header */
 .header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
   margin-bottom: 2.5rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 1.5rem;
@@ -33,41 +29,38 @@ body {
 .name-block h1 {
   font-size: 2.3rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   margin-bottom: 0.25rem;
 }
 
 .tagline {
   font-size: 0.95rem;
   color: #555;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .affiliation {
   font-size: 0.95rem;
   color: #666;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .contact {
   font-size: 0.9rem;
   color: #444;
-}
-
-.contact span {
-  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 /* Nav links */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
@@ -84,31 +77,29 @@ body {
 
 /* Sections */
 main section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   padding: 1.25rem 1.25rem 1.5rem;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid #e0e0e0;
 }
 
 main section h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 0.75rem;
+  color: #111;
 }
 
-.section-intro {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.75rem;
+#about p {
+  margin-bottom: 0.6rem;
 }
 
-#about p + p {
-  margin-top: 0.5rem;
+#about p:last-child {
+  margin-bottom: 0;
 }
 
 .note {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: #555;
 }
 
@@ -118,7 +109,11 @@ main section h2 {
 }
 
 .pub-list li {
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.pub-list li:last-child {
+  margin-bottom: 0;
 }
 
 .pub-title {
@@ -130,13 +125,22 @@ main section h2 {
   color: #555;
 }
 
+.pub-authors strong {
+  color: #333;
+}
+
 /* Projects & items */
 .item {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.item:last-child {
+  margin-bottom: 0;
 }
 
 .item h3 {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
+  font-weight: 600;
   margin-bottom: 0.15rem;
 }
 
@@ -144,6 +148,27 @@ main section h2 {
   font-size: 0.85rem;
   color: #777;
   margin-bottom: 0.35rem;
+}
+
+.item p {
+  font-size: 0.93rem;
+}
+
+.item-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+/* Honors */
+.honors-list {
+  list-style: none;
+}
+
+.honors-list li {
+  font-size: 0.93rem;
+  color: #444;
 }
 
 /* Bio */
@@ -156,7 +181,7 @@ main section h2 {
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.8rem;
-  color: #777;
+  color: #888;
 }
 
 /* Links */
@@ -168,14 +193,8 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Responsive tweaks */
-@media (max-width: 640px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
+/* Responsive */
+@media (max-width: 600px) {
   .page {
     margin-top: 1.5rem;
   }

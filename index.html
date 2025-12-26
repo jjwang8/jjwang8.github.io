@@ -14,20 +14,17 @@
         <h1>Jeffrey Wang</h1>
         <p class="tagline">AI &amp; Machine Learning Research</p>
         <p class="affiliation">
-          Computer Science, University of Wisconsin–Madison
+          Computer Science, University of Wisconsin-Madison
         </p>
         <p class="contact">
-          <span>Email:</span> <a href="mailto:jjwang8@wisc.edu">jjwang8 at wisc.edu</a>
+          <a href="mailto:jjwang8@wisc.edu">jjwang8@wisc.edu</a>
         </p>
+        <nav class="nav-links">
+          <a href="CV.pdf">CV</a>
+          <a href="https://github.com/jjwang8" target="_blank" rel="noopener">GitHub</a>
+          <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a> -->
+        </nav>
       </div>
-
-      <nav class="nav-links">
-        <!-- Replace these # links with real URLs or delete ones you don't use -->
-        <a href="CV.pdf">CV</a>
-        <a href="https://github.com/jjwang8" target="_blank" rel="noopener">GitHub</a>
-        <!-- <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener">Google Scholar</a> -->
-        <!-- <a href="https://www.linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a> -->
-      </nav>
     </header>
 
     <main>
@@ -35,43 +32,32 @@
       <section id="about">
         <h2>Research</h2>
         <p>
-          I am broadly interested in architectural mechanisms that enable <strong>genuine reasoning</strong> in neural networks and large language models, where models perform internal structured computation like search, verification, and planning rather than surface-level pattern matching.
+          Humans can learn a new card game from three examples, debug a failed plan mid-execution, and transfer knowledge across domains with minimal experience. Language models, despite their scale, cannot. I'm interested in <em>why</em>, and in the <strong>architectural mechanisms</strong> that might close this gap.
         </p>
         <p>
-          My current work focuses on <strong>activation-free polynomial networks</strong> and transformer-style backbones with multiplicative interactions in place of standard nonlinearities, studying how design choices such as cross-receptive-field fusion, normalization, and depth shape what structures models can efficiently learn and how robustly they generalize.
-          In parallel, I work on <strong>RLHF-style alignment with noisy preference data</strong>, exploring training schemes that explicitly evaluate and weight the reliability of learning signals instead of treating all feedback as equally trustworthy.
+          My work focuses on models that perform internal structured computation (search, verification, planning) rather than pattern matching. I approach this through two directions: <strong>activation-free polynomial networks</strong> that use multiplicative interactions in place of standard nonlinearities, studying how primitive design choices shape what models can efficiently learn; and <strong>data-centric AI alignment</strong>, investigating how feedback quality and reliability affect preference learning.
         </p>
         <p class="note">
-          <!-- You can tweak this last sentence to match your exact future plans -->
-          Going forward, I aim to design compact recurrent “reasoning cores” and world-model-based agents that can perform internal simulation, self-critique, and tool-using problem solving in open-ended environments.
+          Going forward, I aim to design compact recurrent "reasoning cores" and world-model-based agents that perform internal simulation, self-critique, and tool-using problem solving in open-ended environments.
         </p>
       </section>
 
       <!-- PUBLICATIONS / PREPRINTS -->
       <section id="publications">
-        <h2>Publications &amp; Preprints</h2>
-        <p class="section-intro">
-          <!-- Edit or remove this line if you prefer -->
-          A few representative research directions.
-        </p>
+        <h2>Publications</h2>
         <ul class="pub-list">
           <li>
-            <span class="pub-title"> Challenges and Future Directions of Data-Centric AI Alignment. </span><br>
-            <span class="pub-authors">Min-Hsuan Yeh, <b>Jeffrey Wang</b>, Xuefeng Du, Seongheon Park, Leitian Tao, Shawn Im, Yixuan Li.</span><br>
-            <span class="pub-venue">Position paper, ICML 2025, <a href="https://arxiv.org/abs/2410.01957">pdf</a></span><br>
-            <!-- TODO: Replace with exact title/authors/venue once finalized -->
+            <span class="pub-title">Challenges and Future Directions of Data-Centric AI Alignment</span><br>
+            <span class="pub-authors">Min-Hsuan Yeh, <strong>Jeffrey Wang</strong>, Xuefeng Du, Seongheon Park, Leitian Tao, Shawn Im, Yixuan Li</span><br>
+            <span class="pub-venue">ICML 2025 (Position Paper) <a href="https://arxiv.org/abs/2410.01957">arXiv</a></span>
           </li>
 
           <li>
-            <span class="pub-title">Exploring the Limitations of Activation-free Networks in Vision.</span><br>
-            <span class="pub-authors"><b>Jeffrey Wang</b>, Grigoris Chrysos</span><br>
-            <span class="pub-venue">Manuscript in preparation, targeting ICML 2026</span>
-            <!-- TODO: Update with arXiv link / venue when available -->
+            <span class="pub-title">Exploring the Limitations of Activation-free Networks in Vision</span><br>
+            <span class="pub-authors"><strong>Jeffrey Wang</strong>, Grigoris Chrysos</span><br>
+            <span class="pub-venue">In preparation</span>
           </li>
         </ul>
-
-        <!-- If you don't want to list anything yet, you can comment out the entire <ul> above
-             and just leave a sentence like: "Manuscripts coming soon." -->
       </section>
 
       <!-- RESEARCH PROJECTS -->
@@ -81,74 +67,80 @@
         <div class="item">
           <h3>Activation-Free Polynomial Networks for Vision</h3>
           <p class="item-meta">
-            Research project &middot; University of Wisconsin–Madison
+            UW-Madison, Advisor: Grigorios Chrysos
           </p>
           <p>
-            Designing convolutional and transformer-style backbones built from polynomial and multiplicative units instead of standard activations (e.g., ReLU, softmax), with a focus on cross-receptive-field fusion, normalization strategies, and depth scaling.
-            I evaluate these models on ImageNet and distribution shift benchmarks to study robustness and inductive biases.
+            Designing CNN and transformer-style backbones built from polynomial and multiplicative units (Hadamard products) instead of standard activations like ReLU and softmax. Our attention-equivalent model reaches 80.7% top-1 on ImageNet-1K at 6.5M parameters and 84.3% at 26M parameters, surpassing prior polynomial networks by ~2% while using less than half the FLOPs, and outperforming activation-based models of similar design trained under the same protocol.
           </p>
-          <!-- TODO: Add a link to code or a preprint when ready -->
-        </div>
-
-        <div class="item">
-          <h3>Alignment with Noisy Preference Data</h3>
-          <p class="item-meta">
-            Research project &middot; RLHF / Data Quality
-          </p>
-          <p>
-            Investigating how label noise and annotator reliability affect reinforcement learning from human feedback, and exploring architectures and training schemes that explicitly model annotator trustworthiness instead of treating all comparisons as equally informative.
+          <p class="item-note">
+            Presented early results at the ECE Undergraduate Research Symposium, UW-Madison (2025).
           </p>
         </div>
 
         <div class="item">
-          <h3>Correkt AI &mdash; Multimodal Search and LLM Agents</h3>
+          <h3>Data-Centric AI Alignment</h3>
           <p class="item-meta">
-            Co-founder &amp; AI Lead
+            UW-Madison, Advisor: Yixuan (Sharon) Li
           </p>
           <p>
-            Built an LLM-powered search system that ingests web content, generates synthetic question–answer pairs, and uses LLM-based judges and preference models to rank results.
-            Led the design of the core retrieval and ranking pipeline and managed a small engineering team.
+            Co-authored an ICML 2025 position paper arguing that current alignment methods (RLHF, DPO) focus too heavily on algorithms while underestimating the role of data quality. We identify key challenges in both human and AI-generated feedback, including annotator unreliability, temporal drift, and context dependence, and propose research directions around improved feedback collection, data cleaning, and verification.
           </p>
         </div>
 
         <div class="item">
-          <h3>Amazon &mdash; DynamoDB to Iceberg Data Pipeline</h3>
+          <h3>Correkt AI: Multimodal Search Engine</h3>
           <p class="item-meta">
-            Software Development Engineer Intern
+            Co-founder &amp; ML Lead
           </p>
           <p>
-            Implemented a change-data-capture pipeline from DynamoDB to Apache Iceberg to make production data efficiently queryable for downstream analytics and machine learning workloads, including schema management, batching, and failure handling.
+            Built an LLM-powered search system serving 40K+ users. Fine-tuned LLaMA-3-70B with RLHF, designed synthetic data pipelines to generate and rank millions of preference pairs at &lt;1% the cost of human annotation, and implemented web-scale retrieval over 200M+ indexed pages with ~300ms query latency. Initially launched as Checkify, a fact-checking Chrome extension using LLM-based claim extraction and web verification (87% accuracy on the LIAR benchmark).
           </p>
         </div>
 
         <div class="item">
-          <h3>Quantum Join Reordering for Databases</h3>
+          <h3>Amazon: DynamoDB to Iceberg Data Pipeline</h3>
           <p class="item-meta">
-            Capstone Project &middot; Quantum Optimization
+            Software Development Engineer Intern, Summer 2025
           </p>
           <p>
-            Formulated database join ordering as a QUBO problem and used quantum-inspired or variational quantum algorithms (e.g., QAOA-style approaches) to search for efficient execution plans, comparing against classical heuristics.
+            Built a high-throughput CDC pipeline (~100K events/s) from DynamoDB to Apache Iceberg, enabling real-time ML feature stores and analytics. Delivered a reusable AWS CDK construct that cut data integration time from weeks to minutes.
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Google: Quantum Join Reordering</h3>
+          <p class="item-meta">
+            CS Capstone Project, Fall 2025
+          </p>
+          <p>
+            Formulated database join ordering as a QUBO problem and implemented a QAOA-based optimization pipeline in Qiskit. Achieved 15% lower estimated cost vs. PostgreSQL baseline on multi-table TPC-H queries.
           </p>
         </div>
       </section>
 
-      <!-- SHORT BIO / MISC -->
+      <!-- HONORS -->
+      <section id="honors">
+        <h2>Honors</h2>
+        <ul class="honors-list">
+          <li>Dean's List, all semesters (4.0 GPA), University of Wisconsin-Madison</li>
+        </ul>
+      </section>
+
+      <!-- SHORT BIO -->
       <section id="bio">
-        <h2>Short Bio</h2>
+        <h2>About</h2>
         <p>
-          I am currently preparing applications for PhD programs in computer science, with a focus on deep learning, reasoning-centric architectures, and alignment.
-          Outside of research, I enjoy building systems and tools that make large-scale experimentation and data processing easier.
+          I'm a senior at UW-Madison pursuing a B.S. in Computer Science (Honors) and Data Science. I'm currently applying to PhD programs in machine learning for Fall 2026. Outside of research, I enjoy puzzle games like Baba Is You and grand strategy games like Crusader Kings.
         </p>
       </section>
     </main>
 
     <footer class="footer">
-      <p>&copy; <span id="year"></span> Jeffrey Wang.</p>
+      <p>&copy; <span id="year"></span> Jeffrey Wang</p>
     </footer>
   </div>
 
   <script>
-    // Auto-update year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
