@@ -24,6 +24,22 @@ body {
   margin-bottom: 2.5rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.name-block {
+  flex: 1;
+}
+
+.headshot {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+  object-fit: cover;
 }
 
 .name-block h1 {
@@ -197,5 +213,13 @@ a:hover {
 @media (max-width: 600px) {
   .page {
     margin-top: 1.5rem;
+  }
+  .header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .headshot {
+    width: 120px;
   }
 }

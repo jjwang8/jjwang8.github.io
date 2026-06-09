@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Jeffrey Wang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jeffrey Wang - AI / Machine Learning research focusing on reasoning architectures, polynomial networks, and alignment with noisy human feedback.">
+  <meta name="description" content="Jeffrey Wang - AI / Machine Learning research on rethinking the building blocks of deep learning architectures: activation-free polynomial networks and efficient model design.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +14,14 @@
         <h1>Jeffrey Wang</h1>
         <p class="tagline">AI &amp; Machine Learning Research</p>
         <p class="affiliation">
-          Computer Science, University of Wisconsin-Madison
+          Incoming Ph.D., Electrical &amp; Computer Engineering (Focus: Machine Learning), University of Wisconsin-Madison
+        </p>
+        <p class="affiliation">
+          B.S. Computer Science (Honors) &amp; Data Science, UW-Madison (May 2026)
         </p>
         <p class="contact">
-          <a href="mailto:jjwang8@wisc.edu">jjwang8@wisc.edu</a>
+          <a href="mailto:jjwang8@wisc.edu">jjwang8@wisc.edu</a> &middot;
+          <a href="mailto:Jeffreywang204@gmail.com">Jeffreywang204@gmail.com</a>
         </p>
         <nav class="nav-links">
           <a href="CV.pdf">CV</a>
@@ -25,6 +29,7 @@
           <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a> -->
         </nav>
       </div>
+      <img class="headshot" src="photo.jpg" alt="Jeffrey Wang">
     </header>
 
     <main>
@@ -32,13 +37,13 @@
       <section id="about">
         <h2>Research</h2>
         <p>
-          Humans can learn a new card game from three examples, debug a failed plan mid-execution, and transfer knowledge across domains with minimal experience. Language models, despite their scale, cannot. I'm interested in <em>why</em>, and in the <strong>architectural mechanisms</strong> that might close this gap.
+          My research centers on rethinking the primitive building blocks of deep learning architectures, and how new designs change what a model can learn and at what cost. Humans can learn a new card game from a few examples, revise a plan mid-execution, and transfer knowledge across domains; today's models, despite their scale, largely cannot. I'm drawn to the architectural mechanisms that might close that gap, rather than to scaling existing designs further.
         </p>
         <p>
-          My work focuses on models that perform internal structured computation (search, verification, planning) rather than pattern matching. I approach this through two directions: <strong>activation-free polynomial networks</strong> that use multiplicative interactions in place of standard nonlinearities, studying how primitive design choices shape what models can efficiently learn; and <strong>data-centric AI alignment</strong>, investigating how feedback quality and reliability affect preference learning.
+          My first-author work, PolyNeXt (ICML 2026), is one instance of this: it replaces standard nonlinearities (ReLU, GELU, softmax) with activation-free polynomial, Hadamard-product modules that match or exceed activation-based vision backbones at lower compute. One of its lessons is that depth, not width, drives expressiveness: stacking narrow layers buys exponentially richer functions at only linear parameter cost. I'm extending this architecture-first program toward new attention mechanisms and layer primitives, redesigning the internals of how large models are built rather than treating them as fixed.
         </p>
-        <p class="note">
-          Going forward, I aim to design compact recurrent "reasoning cores" and world-model-based agents that perform internal simulation, self-critique, and tool-using problem solving in open-ended environments.
+        <p>
+          That depth-over-width lesson also points past simply stacking deeper networks. More broadly, I'm interested in alternative architectural designs that let a model reason and deliberate in a learned latent space, using recurrence to add reasoning depth rather than by stacking more layers. World models are one example of this, learning structured internal representations a model can predict and plan over.
         </p>
       </section>
 
@@ -47,60 +52,70 @@
         <h2>Publications</h2>
         <ul class="pub-list">
           <li>
+            <span class="pub-title">Activation-Free Backbones for Image Recognition: Polynomial Alternatives within MetaFormer-Style Vision Models</span><br>
+            <span class="pub-authors"><strong>Jeffrey Wang</strong>, Jonathan Gregory, Grigorios G. Chrysos</span><br>
+            <span class="pub-venue">ICML 2026 <a href="https://jjwang8.github.io/PolyNeXt/">project page</a> <a href="https://arxiv.org/abs/2605.20839">arXiv</a> <a href="https://github.com/jjwang8/PolyNeXt">code</a></span>
+          </li>
+
+          <li>
             <span class="pub-title">Challenges and Future Directions of Data-Centric AI Alignment</span><br>
             <span class="pub-authors">Min-Hsuan Yeh, <strong>Jeffrey Wang</strong>, Xuefeng Du, Seongheon Park, Leitian Tao, Shawn Im, Yixuan Li</span><br>
             <span class="pub-venue">ICML 2025 (Position Paper) <a href="https://arxiv.org/abs/2410.01957">arXiv</a></span>
           </li>
-
-          <li>
-            <span class="pub-title">Exploring the Limitations of Activation-free Networks in Vision</span><br>
-            <span class="pub-authors"><strong>Jeffrey Wang</strong>, Grigoris Chrysos</span><br>
-            <span class="pub-venue">In preparation</span>
-          </li>
         </ul>
       </section>
 
-      <!-- RESEARCH PROJECTS -->
-      <section id="projects">
-        <h2>Selected Projects</h2>
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <h2>Experience</h2>
 
         <div class="item">
-          <h3>Activation-Free Polynomial Networks for Vision</h3>
+          <h3>Researcher, Chrysos Lab, UW-Madison</h3>
           <p class="item-meta">
-            UW-Madison, Advisor: Grigorios Chrysos
+            Advisor: Grigorios Chrysos &middot; Oct 2024 &ndash; present
           </p>
           <p>
-            Designing CNN and transformer-style backbones built from polynomial and multiplicative units (Hadamard products) instead of standard activations like ReLU and softmax. Our attention-equivalent model reaches 80.7% top-1 on ImageNet-1K at 6.5M parameters and 84.3% at 26M parameters, surpassing prior polynomial networks by ~2% while using less than half the FLOPs, and outperforming activation-based models of similar design trained under the same protocol.
+            First-author work on <strong>PolyNeXt</strong> (ICML 2026): a family of CNN- and transformer-style backbones (PolyMLP, PolyConv, PolyAttn) built from activation-free polynomial (Hadamard-product) units in place of ReLU and softmax. The models reach 84.3% top-1 on ImageNet-1K at 26M parameters and scale to 85.2%, matching the activation-based state of the art (CAFormer) at equal size while staying fully activation-free, and surpassing prior polynomial networks by ~2-3% at less than half the FLOPs and 30-45% less peak GPU memory than comparable MetaFormer models, with strong out-of-distribution robustness (ImageNet-C/A/R/Sketch) and ADE20K segmentation transfer. A fully-polynomial (BatchNorm) variant uses only adds and multiplies, a step toward FHE-compatible inference.
           </p>
           <p class="item-note">
-            Presented early results at the ECE Undergraduate Research Symposium, UW-Madison (2025).
+            <a href="https://jjwang8.github.io/PolyNeXt/">project page</a> &middot; <a href="https://arxiv.org/abs/2605.20839">arXiv</a> &middot; <a href="https://github.com/jjwang8/PolyNeXt">code</a>
           </p>
         </div>
 
         <div class="item">
-          <h3>Data-Centric AI Alignment</h3>
+          <h3>Researcher, Sharon Li Lab, UW-Madison</h3>
           <p class="item-meta">
-            UW-Madison, Advisor: Yixuan (Sharon) Li
+            Advisor: Yixuan (Sharon) Li &middot; Jan &ndash; Sept 2024
           </p>
           <p>
-            Co-authored an ICML 2025 position paper arguing that current alignment methods (RLHF, DPO) focus too heavily on algorithms while underestimating the role of data quality. We identify key challenges in both human and AI-generated feedback, including annotator unreliability, temporal drift, and context dependence, and propose research directions around improved feedback collection, data cleaning, and verification.
+            Co-authored an ICML 2025 position paper on data-centric AI alignment, arguing that current methods (RLHF, DPO) overweight algorithms relative to data quality. Ran experiments quantifying how noise in preference data degrades reward models, and designed a noise-robust preference-learning objective (Generalized Binary Cross-Entropy) that improved training stability and accuracy over label-smoothing baselines.
           </p>
         </div>
 
         <div class="item">
-          <h3>Correkt AI: Multimodal Search Engine</h3>
+          <h3>Co-founder &amp; Machine Learning Engineer, Correkt AI</h3>
           <p class="item-meta">
-            Co-founder &amp; ML Lead
+            Aug 2023 &ndash; Aug 2024 &middot; Santa Barbara, CA
           </p>
           <p>
-            Built an LLM-powered search system serving 40K+ users. Fine-tuned LLaMA-3-70B with RLHF, designed synthetic data pipelines to generate and rank millions of preference pairs at &lt;1% the cost of human annotation, and implemented web-scale retrieval over 200M+ indexed pages with ~300ms query latency. Initially launched as Checkify, a fact-checking Chrome extension using LLM-based claim extraction and web verification (87% accuracy on the LIAR benchmark).
+            Built an LLM-powered multimodal search system serving 40K+ users, with funding and grants from CNSI, the Crescent Fund, and SBAA. Fine-tuned LLaMA-3-70B with RLHF, designed synthetic-data pipelines to generate and rank millions of preference pairs at &lt;1% the cost of human annotation, and implemented web-scale retrieval over 800M+ indexed pages with ~300ms query latency.
           </p>
         </div>
 
         <div class="item">
-          <h3>Amazon: DynamoDB to Iceberg Data Pipeline</h3>
+          <h3>Software Development Engineer Intern (Return), Amazon Web Services</h3>
           <p class="item-meta">
-            Software Development Engineer Intern, Summer 2025
+            Summer 2026 &middot; Seattle, WA
+          </p>
+          <p>
+            Building a recommendation system that selects optimal inclusion-key sets to de-duplicate CloudTrail events for IAM Access Analyzer, designed to compress ~100 TB/hr of event data by 98%+. Engineering the distributed pipeline with Step Functions, Lambda, and a PySpark Glue ETL over Parquet.
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Software Development Engineer Intern, Amazon</h3>
+          <p class="item-meta">
+            Summer 2025 &middot; San Diego, CA
           </p>
           <p>
             Built a high-throughput CDC pipeline (~100K events/s) from DynamoDB to Apache Iceberg, enabling real-time ML feature stores and analytics. Delivered a reusable AWS CDK construct that cut data integration time from weeks to minutes.
@@ -108,12 +123,47 @@
         </div>
 
         <div class="item">
-          <h3>Google: Quantum Join Reordering</h3>
+          <h3>Software Engineer Intern, 2Sigma School</h3>
           <p class="item-meta">
-            CS Capstone Project, Fall 2025
+            Summer 2023 &middot; Remote
           </p>
           <p>
-            Formulated database join ordering as a QUBO problem and implemented a QAOA-based optimization pipeline in Qiskit. Achieved 15% lower estimated cost vs. PostgreSQL baseline on multi-table TPC-H queries.
+            Fine-tuned LLM agents and NLP pipelines for personalized feedback and automatic question generation in CS education, using in-context learning and code-execution-based hallucination detection. Cut teacher prep time by 30% and raised satisfaction by 23%, helping deliver personalized curricula to thousands of students.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="item">
+          <h3>Evaluating Modality Bias in Multimodal LLMs</h3>
+          <p class="item-meta">
+            UW-Madison, Jan &ndash; May 2026 &middot; <a href="https://pages.cs.wisc.edu/~samad/FMResearchLanding/">project page</a>
+          </p>
+          <p>
+            Built a counterfactual-ablation pipeline to measure how multimodal LLMs (Qwen2.5-Omni-7B, Gemma-3n) weight visual versus textual evidence, with custom metrics (Attribution Faithfulness Score, Lexical Override Rate, Text Override Rate). Models misreport their own modality use and flip 69% of correct answers under adversarial text injection; modality-separated prompting and importance scoring did not reliably beat baselines, suggesting fixes require architecture or training changes rather than prompting.
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Depth Efficiency of Recurrent Networks</h3>
+          <p class="item-meta">
+            UW-Madison, Jan &ndash; May 2025
+          </p>
+          <p>
+            Extended depth-efficiency theory (why deeper networks are exponentially more expressive) to recurrent models, proving via measure theory that a Tensor-Train network is RNN-equivalent with the same exponential rank separation.
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Quantum-Inspired SQL Query Optimization</h3>
+          <p class="item-meta">
+            Google-Sponsored Software Engineering Capstone, Sept &ndash; Dec 2025
+          </p>
+          <p>
+            Modeled database join ordering as a QUBO problem and built a quantum join-reordering pipeline (QAOA, VQE) in Qiskit, with SQL-to-QUBO compilation from relational query plans. Achieved 15% lower average estimated cost vs. the PostgreSQL baseline plan on 5+ table TPC-H queries.
           </p>
         </div>
       </section>
@@ -122,7 +172,17 @@
       <section id="honors">
         <h2>Honors</h2>
         <ul class="honors-list">
-          <li>Dean's List, all semesters (4.0 GPA), University of Wisconsin-Madison</li>
+          <li>Distinguished Graduate Fellowship, University of Wisconsin-Madison (2026)</li>
+          <li>Dean's List (Fall 2022 &ndash; Spring 2025), University of Wisconsin-Madison; GPA 4.0/4.0</li>
+          <li>USACO Gold (2021)</li>
+        </ul>
+      </section>
+
+      <!-- SERVICE -->
+      <section id="service">
+        <h2>Service</h2>
+        <ul class="honors-list">
+          <li>Reviewer, ICLR 2026 Workshop on Agentic AI in the Wild: From Hallucinations to Reliable Autonomy</li>
         </ul>
       </section>
 
@@ -130,7 +190,10 @@
       <section id="bio">
         <h2>About</h2>
         <p>
-          I'm a senior at UW-Madison pursuing a B.S. in Computer Science (Honors) and Data Science. I'm currently applying to PhD programs in machine learning for Fall 2026. Outside of research, I enjoy puzzle games like Baba Is You and grand strategy games like Crusader Kings.
+          I'm finishing a B.S. in Computer Science (Honors) and Data Science at UW-Madison and beginning my Ph.D. in Electrical &amp; Computer Engineering (ML focus) there in Fall 2026, advised by Grigorios Chrysos and supported by a Distinguished Graduate Fellowship. Outside of research, I enjoy puzzle games like Baba Is You and grand strategy games like Crusader Kings.
+        </p>
+        <p>
+          I'm always glad to hear about research opportunities or interesting problems to work on together, whether it's a role, a grant, or just an idea worth exploring. The best way to reach me is by <a href="mailto:jjwang8@wisc.edu">email</a>.
         </p>
       </section>
     </main>
