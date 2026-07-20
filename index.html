@@ -20,8 +20,7 @@
           B.S. Computer Science (Honors) &amp; Data Science, UW-Madison (May 2026)
         </p>
         <p class="contact">
-          <a href="mailto:jjwang8@wisc.edu">jjwang8@wisc.edu</a> &middot;
-          <a href="mailto:Jeffreywang204@gmail.com">Jeffreywang204@gmail.com</a>
+          <a href="mailto:jjwang8@wisc.edu">jjwang8@wisc.edu</a>
         </p>
         <nav class="nav-links">
           <a href="CV.pdf">CV</a>
@@ -62,6 +61,12 @@
             <span class="pub-authors">Min-Hsuan Yeh, <strong>Jeffrey Wang</strong>, Xuefeng Du, Seongheon Park, Leitian Tao, Shawn Im, Yixuan Li</span><br>
             <span class="pub-venue">ICML 2025 (Position Paper) <a href="https://arxiv.org/abs/2410.01957">arXiv</a></span>
           </li>
+
+          <li>
+            <span class="pub-title">Polynomial Vision Networks: Architecture and the Limits of Block-Recurrent Compression</span><br>
+            <span class="pub-authors"><strong>Jeffrey Wang</strong> (Advisor: Grigorios G. Chrysos)</span><br>
+            <span class="pub-venue">B.S. Honors Thesis in Computer Science, University of Wisconsin&ndash;Madison, 2026 <a href="https://minds.wisc.edu/items/531bdb12-2f20-4a5f-bee6-a79d9aec6f24">thesis</a></span>
+          </li>
         </ul>
       </section>
 
@@ -76,6 +81,9 @@
           </p>
           <p>
             First-author work on <strong>PolyNeXt</strong> (ICML 2026): a family of CNN- and transformer-style backbones (PolyMLP, PolyConv, PolyAttn) built from activation-free polynomial (Hadamard-product) units in place of ReLU and softmax. The models reach 84.3% top-1 on ImageNet-1K at 26M parameters and scale to 85.2%, matching the activation-based state of the art (CAFormer) at equal size while staying fully activation-free, and surpassing prior polynomial networks by ~2-3% at less than half the FLOPs and 30-45% less peak GPU memory than comparable MetaFormer models, with strong out-of-distribution robustness (ImageNet-C/A/R/Sketch) and ADE20K segmentation transfer. A fully-polynomial (BatchNorm) variant uses only adds and multiplies, a step toward FHE-compatible inference.
+          </p>
+          <p>
+            My senior honors thesis extends this line, showing empirically that block-recurrent depth compression, which works well on trained ViTs, fails on polynomial networks: their depth computes genuinely distinct polynomial terms rather than redundant refinements.
           </p>
           <p class="item-note">
             <a href="https://jjwang8.github.io/PolyNeXt/">project page</a> &middot; <a href="https://arxiv.org/abs/2605.20839">arXiv</a> &middot; <a href="https://github.com/jjwang8/PolyNeXt">code</a>
